@@ -1,0 +1,229 @@
+/* Variables and Base Styles */
+:root {
+    --primary: #2196F3;
+    --primary-dark: #1976D2;
+    --secondary: #78909C;
+    --background: #FAFAFA;
+    --surface: #FFFFFF;
+    --on-primary: #FFFFFF;
+    --on-surface: #212121;
+    --shadow-1: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-2: 0 4px 8px rgba(0,0,0,0.1);
+    --spacing: clamp(1rem, 2vw, 2rem);
+    --whatsapp-green: #25D366;
+    --google-blue: #4285F4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--on-surface);
+    background-color: var(--background);
+    scroll-behavior: smooth;
+}
+
+/* Header and Navigation */
+.header {
+    background-color: var(--surface);
+    box-shadow: var(--shadow-1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem var(--spacing);
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--on-surface);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.1), rgba(33, 150, 243, 0.05));
+    padding: var(--spacing);
+    margin-top: 60px;
+}
+
+.hero-content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.app-name {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: var(--secondary);
+    margin-bottom: 2rem;
+}
+
+.integration-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.integration-icon {
+    font-size: 3rem;
+    transition: transform 0.3s ease;
+}
+
+.integration-icon:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-icon {
+    color: var(--whatsapp-green);
+}
+
+.google-icon {
+    color: var(--google-blue);
+}
+
+/* Button */
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--primary);
+    color: var(--on-primary);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Sections */
+.section {
+    padding: calc(var(--spacing) * 2);
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing);
+}
+
+/* Cards */
+.card {
+    background: var(--surface);
+    padding: var(--spacing);
+    border-radius: 8px;
+    box-shadow: var(--shadow-1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-2);
+}
+
+/* Section Titles */
+.section-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Process Cards */
+.process-card {
+    position: relative;
+    padding-left: 3rem;
+}
+
+.process-number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--primary);
+    color: var(--on-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+/* Call-to-Action Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--on-primary);
+    text-align: center;
+    padding: calc(var(--spacing) * 3);
+    margin-top: 4rem;
+}
+
+.cta-title {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: 2rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .nav-list {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .integration-icons {
+        gap: 1rem;
+    }
+
+    .integration-icon {
+        font-size: 2.5rem;
+    }
+}
